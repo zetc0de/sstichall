@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{% if title %}
+	<title>{{ title }}</title>
+	{% else %}
+	<title>Welcome Hacker!</title>
+	{% endif %}
+	<link href="https://fonts.googleapis.com/css?family=Indie+Flower|ABeeZee" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<script src="https://raw.githubusercontent.com/juliangarnier/anime/master/anime.js"></script>
+
+	<style>
+	table,th,td {
+		border: 1px solid black;
+		border-collapse: collapse;
+	}
+	.tanya {
+		font-family: Indie Flower;
+	}
+	.sapa {
+		font-family: ABeeZee;
+	}
+	.quotes {
+		padding: 20px;
+		margin: auto;
+		height: 500px;
+		width: 700px;
+	}
+	.quotes img {
+		display: block;
+		height: 400px;
+		width: 300px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.quotes p{
+		font-family: Indie Flower;
+		font-size: 24px;
+		text-align: center;
+	}
+</style>
+</head>
+<body>
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		<a class="navbar-brand" href="/">
+			<img src="http://events.surabayahackerlink.org/img/logo.png" alt="Logo SHL" width="100" height="90">
+		</a>
+
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="/nama">Input Name</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">Input Flag</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/solver">Solver Lists</a>
+			</li>
+		</ul>
+		<form class="form-inline" action="/action_page.php">
+			<input class="form-control mr-sm-2" type="text" placeholder="Search">
+			<button class="btn btn-success" type="submit">Search</button>
+		</form>
+	</nav>
+
+
+	<div class="container-fluid content">
+		{% block content %}
+		{% endblock %}
+	</div>
+</body>
+</html>
+

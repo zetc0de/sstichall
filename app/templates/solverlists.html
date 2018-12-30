@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<br>
+<h1>Lists Chall Solver</h1>
+<br>
+<table style="width: 50%">
+	<tr>
+		<th>No</th>
+		<th>Nama</th>
+		<th>Asal</th>
+	</tr>
+	{% for i in solver %}
+	<tr>
+		<td>{{ loop.index }}</td>
+		<td>{{ i.nama.teman }}</td>
+		<td>{{ i.asal.tempat }}</td>
+	</tr>
+	{% endfor %}
+</table>
+
+{% endblock %}

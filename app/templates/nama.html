@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<br>
+<h1 class="tanya">Namanya siapa mas?</h1>
+<br>
+<div class="form-group">
+	<form class="form-inline" action="/inputnama" method="POST">
+		<label class="mr-sm-2" for="nama">Input Name :</label>
+		<input class="form-control mb-2 mr-sm-2"  type="text" name="nama" id="nama">
+		<input class="btn btn-danger mb-2"  type="submit" value="sentlappp!!">
+	</form>
+</div>
+{% if nama is defined %}
+<h1 class="sapa">{{ sapa }} {{ nama }} {{ emot }} </h1>
+{% endif %}
+{% endblock %}
