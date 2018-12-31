@@ -1,10 +1,14 @@
 #!/usr/bin/python3
-
+import os
 from app import app
-from flask import render_template,redirect,url_for,request
+from flask import render_template,redirect,url_for,request,Session
 from jinja2 import Environment
-jinja = Environment()
+from flask_wtf.csrf import CSRFProtect
 
+jinja = Environment()
+csrf = CSRFProtect(app)
+APP_ROOT = os.path.dirname(os.path.abspath(__file__))   # refers to application_top
+APP_STATIC = os.path.join(APP_ROOT, '../')
 
 @app.route('/')
 def index():
@@ -23,38 +27,51 @@ def nama():
 			user = request.args.get("nama","")
 			output = jinja.from_string(user).render()
 			if user:
-				sapa = "Salam kenal ya "
+				sapa = "Salam kenal ya kak "
 				emot = "😊"
-				return render_template('nama.html',title='Nama Hacker',sapa=sapa,nama=output,emot=emot)
+				return render_template('nama.html',title='Hacker Name',sapa=sapa,nama=output,emot=emot)
 			else:
 				emot = "😓"
 				sapa = ""
-				return render_template('nama.html',title='Nama Hacker',sapa=sapa,nama=output,emot=emot)
+				return render_template('nama.html',title='Hacker Name',sapa=sapa,nama=output,emot=emot)
 
+
+
+@app.route('/inputsearch',methods=['GET','POST'])
+def inputsearch():
+	if request.method == 'POST':
+		q = request.form.get("q","")
+		return redirect(url_for("search",q=q))
+
+@app.route('/search',methods=['GET','POST'])
+def search():
+	if request.method == 'GET':
+		q = request.args.get("q","")
+		# o = jinja.from_string(q).render()
+		return render_template('sqlerror.html',title='SQL error (You have an error in your SQL syntax',q=q)
+		# if q:
+		# 	return render_template('sqlerror.html',title='Tak Selamanya Error Itu Benar',q=q)
+		# else:
+		# 	redirect(url_for('solver'))
 
 
 @app.route('/solver')
-def namaTeman():
-	solver = [
-	{
-		'nama': {'teman':'Adam Maulana Yusuf'},
-		'asal': {'tempat':'Bandung'}
-	},
-	{
-		'nama': {'teman':'Ali Syam'},
-		'asal': {'tempat':'Bekasi'}
-	},
-	{
-		'nama': {'teman':'Jundi Al-Mubarok'},
-		'asal': {'tempat':'Cirebon'}
-	},
-	{
-		'nama': {'teman':'M. Shohib Al-Mahdhor'},
-		'asal': {'tempat':'Bekasi'}
-	},
-	{
-		'nama': {'teman':'M. Syahid Al-Ghuroba'},
-		'asal': {'tempat':'Lampung'}
-	}]
-	return render_template('solverlists.html',title='Chall-Solver',solver=solver)
+def solver():
+	with open(os.path.join(APP_STATIC, 'solver.txt')) as f:
+	    s = f.read().split('\n')
+	# solver = open("../solver.txt","r")
+	return render_template('solverlists.html',title='Chall-Solver',solver=s)
 
+
+@app.route('/hit')
+def hits():
+	return render_template('gethit.html',title='Your Hit')
+
+
+@app.route('/inputflag',methods=['GET','POST'])
+def inputflag():
+	if request.method == 'POST':
+		if request.args.get("flag","") == session['flag']:
+			return redirect(url_for("inputsolver"))
+	else:
+		return render_template('inputflag.html',title='Input Flag')

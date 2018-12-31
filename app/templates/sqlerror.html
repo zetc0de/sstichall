@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<br>
+<div class="search">
+	<h4>Search Result : {{ q }}</h4>
+</div>
+<br>
+<p>
+	SQL error (You have an error in your SQL syntax; Dan ngga selamanya error itu benar; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY people.lastname ASC LIMIT 0, 10' at line 6)
+in (
+SELECT answer.aid as aid,answer.pid, answer.title title, answer.tags as tags, answer.content as content, answer.content_type as content_type,
+					people.group_id as group_id ,people.picture as picture,people.firstname as firstname, people.lastname as lastname , people.title as title, people.organization as organization						  
+	                FROM answer, ques_to_ans, people
+					WHERE answer.aid = ques_to_ans.aid AND people.pid = answer.pid
+					AND ques_to_ans.qid =  
+					ORDER BY people.lastname ASC
+					LIMIT 0, 10
+)
+SQL error (You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND people.group_id = 3' at line 5)
+in (
+SELECT answer.aid as aid,answer.pid, answer.title title, answer.tags as tags, answer.content as content, answer.content_type as content_type,
+					people.group_id as group_id ,people.picture as picture,people.firstname as firstname, people.lastname as lastname , people.title as title, people.organization as organization						  
+	                FROM answer, ques_to_ans, people
+					WHERE answer.aid = ques_to_ans.aid AND people.pid = answer.pid
+					AND ques_to_ans.qid =  AND people.group_id = 3
+)
+
+SQL error (You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY people.lastname ASC LIMIT 0, 10' at line 6)
+in (
+SELECT answer.aid as aid,answer.pid, answer.title title, answer.tags as tags, answer.content as content, answer.content_type as content_type,
+					people.group_id as group_id ,people.picture as picture,people.firstname as firstname, people.lastname as lastname , people.title as title, people.organization as organization						  
+	                FROM answer, ques_to_ans, people
+					WHERE answer.aid = ques_to_ans.aid AND people.pid = answer.pid
+					AND ques_to_ans.qid =  
+					ORDER BY people.lastname ASC
+					LIMIT 0, 10
+)
+SQL error (You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND people.group_id = 3' at line 5)
+in (
+SELECT answer.aid as aid,answer.pid, answer.title title, answer.tags as tags, answer.content as content, answer.content_type as content_type,
+					people.group_id as group_id ,people.picture as picture,people.firstname as firstname, people.lastname as lastname , people.title as title, people.organization as organization						  
+	                FROM answer, ques_to_ans, people
+					WHERE answer.aid = ques_to_ans.aid AND people.pid = answer.pid
+					AND ques_to_ans.qid =  AND people.group_id = 3
+)
+</p>
+{% endblock %}

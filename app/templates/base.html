@@ -9,23 +9,39 @@
 	{% else %}
 	<title>Welcome Hacker!</title>
 	{% endif %}
-	<link href="https://fonts.googleapis.com/css?family=Indie+Flower|ABeeZee" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Indie+Flower|ABeeZee" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-	<script src="https://raw.githubusercontent.com/juliangarnier/anime/master/anime.js"></script>
 
 	<style>
+	body {
+		background: black;
+	}
 	table,th,td {
 		border: 1px solid black;
 		border-collapse: collapse;
 	}
+	.menunya {
+		font-family: Bungee Inline;
+		font-size: 20px;
+	}
+	.nanya {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		height: 400px;
+		width: 600px;
+		padding: 20px;
+	}
 	.tanya {
 		font-family: Indie Flower;
+		color: white;
 	}
 	.sapa {
 		font-family: ABeeZee;
+		color: white;
 	}
 	.quotes {
 		padding: 20px;
@@ -35,15 +51,41 @@
 	}
 	.quotes img {
 		display: block;
-		height: 400px;
-		width: 300px;
 		margin-left: auto;
 		margin-right: auto;
+		padding: 20px;
 	}
 	.quotes p{
 		font-family: Indie Flower;
-		font-size: 24px;
+		font-size: 30px;
 		text-align: center;
+		color: white;
+	}
+	.solver {
+		font-family: Indie Flower;
+		font-size: 50px;
+		color: white;
+	}
+	table {
+		color: white;
+	}
+	.search h4{
+		padding: 30px;
+		display: inline;
+		color: white;
+		font-size: 23px;
+	}
+	.inputflag {
+		font-family: Indie Flower;
+		color: white;
+		text-align: center;
+		margin-top: 100px;
+	}
+	.hit {
+		font-family: Indie Flower;
+		color: white;
+		text-align: center;
+		margin-top: 100px;
 	}
 </style>
 </head>
@@ -55,17 +97,21 @@
 
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item">
-				<a class="nav-link" href="/nama">Input Name</a>
+				<a class="nav-link menunya" href="/nama">Input Name</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#">Input Flag</a>
+				<a class="nav-link menunya" href="/hit">Get Your Hit</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="/solver">Solver Lists</a>
+				<a class="nav-link menunya" href="/inputflag">Input Flag</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link menunya" href="/solver">Solver Lists</a>
 			</li>
 		</ul>
-		<form class="form-inline" action="/action_page.php">
-			<input class="form-control mr-sm-2" type="text" placeholder="Search">
+		<form class="form-inline" action="/inputsearch" method="POST">
+			<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+			<input class="form-control mr-sm-2" type="text" placeholder="Search" name="q">
 			<button class="btn btn-success" type="submit">Search</button>
 		</form>
 	</nav>
