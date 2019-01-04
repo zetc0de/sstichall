@@ -64,9 +64,9 @@ def solver():
 	return render_template('solverlists.html',title='Chall-Solver',solver=s)
 
 
-@app.route('/hit')
-def hits():
-	return render_template('gethit.html',title='Your Hit')
+@app.route('/hint')
+def hints():
+	return render_template('gethint.html',title='Your Hint')
 
 
 @app.route('/inputflag',methods=['GET','POST'])
