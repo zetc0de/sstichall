@@ -28,10 +28,10 @@ def nama():
 			output = jinja.from_string(user).render()
 			if user:
 				sapa = "Salam kenal ya kak "
-				emot = "😊"
+				emot = "x"
 				return render_template('nama.html',title='Hacker Name',sapa=sapa,nama=output,emot=emot)
 			else:
-				emot = "😓"
+				emot = "x"
 				sapa = ""
 				return render_template('nama.html',title='Hacker Name',sapa=sapa,nama=output,emot=emot)
 
