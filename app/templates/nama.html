@@ -2,17 +2,17 @@
 {% block content %}
 <br>
 <br>
-<div class="nanya">
-	<h1 class="tanya">Namanya siapa mas?</h1>
-	<div class="form-group">
-		<form action="/inputnama" method="POST">
-			<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-			<input class="form-control mb-2 mr-sm-4"  type="text" name="nama" id="nama">
-			<input class="btn btn-danger mb-2"  type="submit" value="sentlappp!!">
-		</form>
+<div class="row">
+	<div class="nanya col-md-10">
+		<h1 class="tanya">Namanya siapa mas?</h1>
+		<div class="form-group">
+			<form action="/inputnama" method="POST">
+				<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+				<input class="form-control mb-2 mr-sm-4"  type="text" name="nama" id="nama">
+				<input class="btn btn-danger mb-2"  type="submit" value="sentlappp!!">
+			</form>
+		</div>
 	</div>
-	<br>
-	<br>
 	{% if nama is defined %}
 	<center><h1 class="sapa">{{ sapa }} {{ nama }} {{ emot }} </h1></center>
 	{% endif %}

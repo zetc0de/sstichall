@@ -4,6 +4,7 @@ from app import app
 from flask import render_template,redirect,url_for,request,Session
 from jinja2 import Environment
 from flask_wtf.csrf import CSRFProtect
+import emoji
 
 jinja = Environment()
 csrf = CSRFProtect(app)
@@ -28,10 +29,10 @@ def nama():
 			output = jinja.from_string(user).render()
 			if user:
 				sapa = "Salam kenal ya kak "
-				emot = "x"
+				emot = emoji.emojize(":thumbs_up:")
 				return render_template('nama.html',title='Hacker Name',sapa=sapa,nama=output,emot=emot)
 			else:
-				emot = "x"
+				emot = emoji.emojize(":thumbs_down:")
 				sapa = ""
 				return render_template('nama.html',title='Hacker Name',sapa=sapa,nama=output,emot=emot)
 
