@@ -3,7 +3,7 @@
 <br>
 <br>
 <div class="row">
-	<div class="nanya col-md-6">
+	<div class="nanya col-md-8">
 		<h1 class="tanya">Namanya siapa mas?</h1>
 		<div class="form-group">
 			<form action="/inputnama" method="POST">
@@ -13,8 +13,10 @@
 			</form>
 		</div>
 	</div>
-	{% if nama is defined %}
-	<center><h1 class="sapa">{{ sapa }} {{ nama }} {{ emot }} </h1></center>
-	{% endif %}
+	<div class="col-md-12">
+		{% if nama is defined %}
+			<center><h1 class="sapa">{{ sapa }} {{ nama }} {{ emot }} </h1></center>
+		{% endif %}
+	</div>
 </div>
 {% endblock %}
