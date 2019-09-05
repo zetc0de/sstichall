@@ -12,7 +12,7 @@ AutoKuesioner requires [Docker](https://www.docker.com/) to run.
 
 ```sh
 $ docker pull zetc0de/sstichall
-$  docker run -d -p 80:5000 zetc0de/sstichall
+$ docker run -d -p 80:5000 zetc0de/sstichall
 ```
 
 ![landing page](https://raw.githubusercontent.com/zetc0de/sstichall/master/ss/landing.png)
