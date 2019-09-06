@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import os
 from app import app
-from flask import render_template,redirect,url_for,request,Session
+from flask import render_template,redirect,url_for,request,session
 from jinja2 import Environment
 from flask_wtf.csrf import CSRFProtect
 import emoji
