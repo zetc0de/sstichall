@@ -7,7 +7,7 @@ SSTIchall ini dibuat untuk memahami cara exploitasi celah keamanan SSTI (Server 
 Anda dapat mempelajari seputar SSTI Vulnerability pada artikel [Cheatsheet - Flask & Jinja2 SSTI](https://pequalsnp-team.github.io/cheatsheet/flask-jinja2-ssti)
 ### Installation
 
-AutoKuesioner requires [Docker](https://www.docker.com/) to run.
+SSTIChall require [Docker](https://www.docker.com/) to run.
 
 
 ```sh
