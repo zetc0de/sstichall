@@ -61,7 +61,7 @@ def solver():
 	with open(os.path.join(APP_STATIC, 'solver.txt')) as f:
 	    s = f.read().split('\n')
 	# solver = open("../solver.txt","r")
-	return render_template('solverlists.html',title='Chall-Solver',solver=s)
+	return render_template('solverlists.html',title='Solver List',solver=s)
 
 
 @app.route('/hint')
