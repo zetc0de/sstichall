@@ -66,7 +66,7 @@ def solver():
 
 @app.route('/hint')
 def hints():
-	return render_template('gethint.html',title='Your Hint')
+	return render_template('gethint.html',title='How To Play?')
 
 
 @app.route('/inputflag',methods=['GET','POST'])
